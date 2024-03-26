@@ -22,5 +22,4 @@ public class Produto {
     private String animeProduto;
     @Column(nullable = false)
     private String urlFoto;
-
 }
