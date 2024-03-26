@@ -22,6 +22,12 @@ public class Usuario implements UserDetails {
     @Column(nullable = false)
     private TipoUsuario tipo;
 
+    public Usuario(String email, String senha, TipoUsuario tipo){
+        this.email = email;
+        this.senha = senha;
+        this.tipo = tipo;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if(this.tipo == TipoUsuario.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
